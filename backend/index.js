@@ -2,6 +2,7 @@
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const authRoutes = require('./routes/authRoutes');
 require('dotenv').config();
 const bookRoutes = require('./routes/bookRoutes');
 
@@ -12,6 +13,7 @@ const app = express();
 // إعدادات الـ Middleware
 app.use(cors()); // يسمح للواجهة الأمامية بالاتصال
 app.use(express.json()); // لفهم البيانات بصيغة JSON
+app.use('/api/auth', authRoutes);
 app.use('/api/books', bookRoutes);
 
 
