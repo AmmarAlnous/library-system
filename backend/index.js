@@ -32,7 +32,7 @@ app.get('/', (req, res) => {
 });
 
 // تشغيل السيرفر على المنفذ 3000 أو من .env
-const PORT = process.env.PORT || 3000;
+const PORT = 4000;;
 app.listen(PORT, () => {
   console.log(`🚀 Server is running on port ${PORT}`);
 });
