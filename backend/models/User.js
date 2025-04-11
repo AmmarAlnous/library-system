@@ -27,14 +27,14 @@ const userSchema = new mongoose.Schema({
   },
   preferredLanguage: {
     type: String,
+    enum: ['ar', 'en'],
     default: 'ar'
   },
-  // 🆕 حقول استعادة كلمة المرور
+  // 🔐 خصائص إعادة تعيين كلمة المرور
   resetToken: String,
   resetTokenExpires: Date
 }, {
   timestamps: true
 });
 
-const User = mongoose.model('User', userSchema);
-module.exports = User;
+module.exports = mongoose.model('User', userSchema);
