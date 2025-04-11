@@ -29,6 +29,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 'ar'
   },
+  // 🆕 حقول استعادة كلمة المرور
   resetToken: String,
   resetTokenExpires: Date
 }, {
