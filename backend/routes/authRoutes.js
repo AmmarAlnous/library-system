@@ -6,7 +6,7 @@ const crypto = require('crypto');
 const User = require('../models/User');
 const generateCode = require('../utils/generateCode');
 const sendEmail = require('../utils/mailer');
-const verifyTokenAndAdmin = require('../middlewares/verifyTokenAndAdmin');
+const verifyTokenAndAdmin = require('../middleware/verifyTokenAndAdmin');
 
 // 📌 تسجيل طالب جديد
 router.post('/register', async (req, res) => {
