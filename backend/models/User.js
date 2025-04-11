@@ -3,18 +3,18 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true, // الاسم إلزامي
+    required: true,
     trim: true
   },
   studentId: {
     type: String,
     required: true,
-    unique: true // رقم الطالب يجب أن يكون مميز
+    unique: true
   },
   email: {
     type: String,
     required: true,
-    unique: true // الإيميل مميز أيضًا
+    unique: true
   },
   password: {
     type: String,
@@ -22,15 +22,17 @@ const userSchema = new mongoose.Schema({
   },
   role: {
     type: String,
-    enum: ['student', 'admin'], // دور المستخدم
+    enum: ['student', 'admin'],
     default: 'student'
   },
   preferredLanguage: {
     type: String,
-    default: 'ar' // اللغة المفضلة، مثل: 'ar' أو 'en'
-  }
+    default: 'ar'
+  },
+  resetToken: String,
+  resetTokenExpires: Date
 }, {
-  timestamps: true // تاريخ الإنشاء والتعديل تلقائيًا
+  timestamps: true
 });
 
 const User = mongoose.model('User', userSchema);
